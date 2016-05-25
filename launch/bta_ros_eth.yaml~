@@ -1,0 +1,46 @@
+#Parameter server configuration for bta_ros.
+udpDataIpAddr: {
+n1: 224,
+n2: 0,
+n3: 0,
+n4: 1,
+}
+
+udpDataIpAddrLen: 4
+udpDataPort: 10012
+tcpDeviceIpAddr: {
+n1: 192,
+n2: 168,
+n3: 0,
+n4: 12,
+}
+
+tcpDeviceIpAddrLen: 4
+tcpControlPort: 10001
+
+#udpControlOutIpAddr: 
+#udpControlOutIpAddrLen:
+#udpControlOutPort:
+#udpControlInIpAddr:
+#udpControlInIpAddrLen:
+#udpControlInPort: 
+#tcpDataPort:
+#uartPortName:
+#uartBaudRate:
+#uartDataBits:
+#uartStopBits:
+#uartParity:
+#uartTransmitterAddress:
+#uartReceiverAddress
+#serialNumber:
+#calibFileName:
+frameMode: 1
+frameQueueMode: 1
+verbosity: 5
+frameQueueLength: 1
+
+# Optional parameter.
+#frameRate: 15
+#integrationTime: 1500
+
+#Sensor2D

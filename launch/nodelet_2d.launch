@@ -1,0 +1,18 @@
+<!-- 
+	Nodelet launch file for bta_ros.
+
+	See http://www.ros.org/wiki/bta_ros for more information.
+-->
+<launch>
+	<node pkg="nodelet" type="nodelet"
+	name="standalone_nodelet" args="manager"
+	output="screen"/>
+
+	<node pkg="nodelet" type="nodelet"
+		name="bta_ros_2d_1"
+		args="load bta_ros/Sensor2DNodelet standalone_nodelet"
+		required="true"	output="screen">
+		<param name="2dURL" value="http://192.168.0.10/argos.sdp"/>
+	</node>
+  	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find bta_ros)/launch/rvizConfig_2d.rviz" />
+</launch>

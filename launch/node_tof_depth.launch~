@@ -1,0 +1,14 @@
+<!-- 
+	Node launch file for bta_ros.
+
+	See http://www.ros.org/wiki/bta_ros for more information.
+-->
+<launch>
+  <node pkg="bta_ros" type="bta_ros_node" name="bta_ros_1"
+        args="" required="true" output="screen" >
+        <rosparam command="load" file="$(find bta_ros)/launch/bta_ros_eth.yaml" />
+  </node>
+  
+  <node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" />
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bta_ros)/launch/rvizConfig_tof.rviz" />
+</launch>

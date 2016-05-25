@@ -1,0 +1,20 @@
+image_width: 160
+image_height: 120
+camera_name: /bta_ros_1
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [91.2036294652818, 0, 78.5952059763383, 0, 91.1564132877772, 59.8474460277359, 0, 0, 1]
+distortion_model: plumb_bob
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.0369591146646546, -0.0416252517407201, 0.00449285567819513, 0.00186558944065139, 0]
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1, 0, 0, 0, 1, 0, 0, 0, 1]
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [84.7752685546875, 0, 78.3015572659933, 0, 0, 88.0794143676758, 59.9353456948802, 0, 0, 0, 1, 0]
