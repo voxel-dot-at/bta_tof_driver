@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<package>
+<name>bta_tof_driver</name>
+<version>0.1.1</version>
+<description>The BTA ROS driver</description>
+
+  <maintainer email="office@voxel.at">Voxel Interactive</maintainer>
+
+  <license>MIT</license>
+
+
+  <url type="website">http://www.ros.org/wiki/bta_tof_driver</url>
+  <url type="website">http://www.voxel.at</url>
+  <url type="bugtracker">https://github.com/voxel-dot-at/bta_tof_driver/issues</url>
+  <url type="repository">https://github.com/voxel-dot-at/bta_tof_driver</url>
+
+  <author email="amerino@voxel.at">Angel Merino</author>
+  <author email="simon@voxel.at">Simon Vogl</author>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>dynamic_reconfigure</build_depend>
+  <build_depend>libpcl-all-dev</build_depend>
+  <build_depend>pcl_ros</build_depend>
+  <build_depend>pcl_conversions</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>image_transport</build_depend>
+  <build_depend>camera_info_manager</build_depend>
+  <build_depend>camera_calibration_parsers</build_depend>
+  <build_depend>nodelet</build_depend>
+
+  <run_depend>nodelet</run_depend>
+  <run_depend>dynamic_reconfigure</run_depend>
+  <run_depend>libpcl-all</run_depend>
+  <run_depend>pcl_ros</run_depend>
+  <run_depend>pcl_conversions</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>std_msgs</run_depend>
+  <run_depend>image_transport</run_depend>
+  <run_depend>camera_info_manager</run_depend>
+  <run_depend>camera_calibration_parsers</run_depend>
+
+    <export>
+        <nodelet plugin="${prefix}/nodelet_plugins.xml"/>
+    </export>
+
+</package>
