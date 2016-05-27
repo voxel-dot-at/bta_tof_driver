@@ -1,7 +1,7 @@
 <!-- 
-	Nodelet launch file for bta_ros.
+	Nodelet launch file for bta_tof_driver.
 
-	See http://www.ros.org/wiki/bta_ros for more information.
+	See http://www.ros.org/wiki/bta_tof_driver for more information.
 -->
 <launch>
 	<node pkg="nodelet" type="nodelet"
@@ -9,17 +9,17 @@
 	output="screen"/>
 
 	<node pkg="nodelet" type="nodelet"
-		name="bta_ros_1"
-		args="load bta_ros/BtaRosNodelet standalone_nodelet"
+		name="bta_tof_driver_1"
+		args="load bta_tof_driver/BtaRosNodelet standalone_nodelet"
 		required="true"	output="screen">
-		<rosparam command="load" file="$(find bta_ros)/launch/bta_ros_eth.yaml" />
+		<rosparam command="load" file="$(find bta_tof_driver)/launch/bta_tof_driver_eth.yaml" />
 	</node>
 	<node pkg="nodelet" type="nodelet"
-		name="bta_ros_2d_1"
-		args="load bta_ros/Sensor2DNodelet standalone_nodelet"
+		name="bta_tof_driver_2d_1"
+		args="load bta_tof_driver/Sensor2DNodelet standalone_nodelet"
 		required="true"	output="screen">
 	<param name="2dURL" value="http://192.168.0.10/argos.sdp"/>
 	</node>
   	<node name="rqt_reconfigure" pkg="rqt_reconfigure" type="rqt_reconfigure" />
-  	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find bta_ros)/launch/rvizConfig_tof_2d.rviz" />
+  	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find bta_tof_driver)/launch/rvizConfig_tof_2d.rviz" />
 </launch>

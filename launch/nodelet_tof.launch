@@ -1,7 +1,7 @@
 <!-- 
-	Nodelet launch file for bta_ros.
+	Nodelet launch file for bta_tof_driver.
 
-	See http://www.ros.org/wiki/bta_ros for more information.
+	See http://www.ros.org/wiki/bta_tof_driver for more information.
 	
 -->
 <launch>
@@ -10,10 +10,10 @@
 	output="screen"/>
 
 	<node pkg="nodelet" type="nodelet"
-		name="bta_ros_1"
-		args="load bta_ros/BtaRosNodelet standalone_nodelet"
+		name="bta_tof_driver_1"
+		args="load bta_tof_driver/BtaRosNodelet standalone_nodelet"
 		required="true"	output="screen">
-		<rosparam command="load" file="$(find bta_ros)/launch/bta_ros_eth.yaml" />
+		<rosparam command="load" file="$(find bta_tof_driver)/launch/bta_eth.yaml" />
 	</node>
-  	<node name="rqt" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find bta_ros)/launch/bta_tof_driver.perspective"/>
+  	<node name="rqt" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find bta_tof_driver)/launch/bta_tof_driver.perspective"/>
 </launch>

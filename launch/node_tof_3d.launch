@@ -1,16 +1,16 @@
 <!-- 
-	Node launch file for bta_ros.
+	Node launch file for bta_tof_driver.
 
-	See http://www.ros.org/wiki/bta_ros for more information.
+	See http://www.ros.org/wiki/bta_tof_driver for more information.
 -->
 <launch>
 
-  <node pkg="bta_ros" type="bta_ros_node" name="bta_ros_1"
+  <node pkg="bta_tof_driver" type="bta_tof_driver_node" name="bta_tof_driver_1"
         args="" required="true" output="screen" >
-        <rosparam command="load" file="$(find bta_ros)/launch/bta_ros_eth_3d.yaml" />
+        <rosparam command="load" file="$(find bta_tof_driver)/launch/bta_eth_3d.yaml" />
   </node>
 
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bta_ros)/launch/rvizConfig_tof.rviz" />
-  <node name="rqt" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find bta_ros)/launch/bta_tof_driver.perspective"/>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find bta_tof_driver)/launch/rvizConfig_tof.rviz" />
+  <node name="rqt" pkg="rqt_gui" type="rqt_gui" args="--perspective-file $(find bta_tof_driver)/launch/bta_tof_driver.perspective"/>
   
 </launch>

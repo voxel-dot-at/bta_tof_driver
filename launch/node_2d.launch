@@ -1,13 +1,13 @@
 <!-- 
-	Node launch file for bta_ros sensor2d node.
+	Node launch file for bta_tof_driver sensor2d node.
 
-	See http://www.ros.org/wiki/bta_ros for more information.
+	See http://www.ros.org/wiki/bta_tof_driver for more information.
 -->
 <launch>
-  <node pkg="bta_ros" type="sensor2d_node" name="bta_ros_1"
+  <node pkg="bta_tof_driver" type="sensor2d_node" name="bta_tof_driver_1"
         args="" required="true" output="screen" >
         <param name="2dURL" value="http://192.168.0.10/argos.sdp"/>
   </node>
-	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find bta_ros)/launch/rvizConfig_2d.rviz" />
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find bta_tof_driver)/launch/rvizConfig_2d.rviz" />
   
 </launch>

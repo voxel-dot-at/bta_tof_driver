@@ -1,9 +1,9 @@
 <!-- 
-	Node launch file for bta_ros.
+	Node launch file for bta_tof_driver.
 	Display depth from compresed U16C1 row data
 	Thanks to Jon Azpiazu (Jon.Azpiazu@sintef.no)
 
-	See http://www.ros.org/wiki/bta_ros for more information.
+	See http://www.ros.org/wiki/bta_tof_driver for more information.
 -->
 <launch>
   <!-- Nodelet manager for this pipeline -->
@@ -16,13 +16,13 @@
   <node pkg="nodelet" type="nodelet" name="metric_rect" 
         args="load depth_image_proc/convert_metric record_player_manager --no-bond">
 
-	<remap from="image_raw" to="/bta_ros_1/tof_camera/decompressedDepth"/>
-	<remap from="image" to="/bta_ros_1/tof_camera/depth/image"/>
+	<remap from="image_raw" to="/bta_tof_driver_1/tof_camera/decompressedDepth"/>
+	<remap from="image" to="/bta_tof_driver_1/tof_camera/depth/image"/>
   </node>
   
   <node pkg="image_transport" type="republish" name="image_convert" 
   	args="compressedDepth">
-	<remap from="in" to="/bta_ros_1/tof_camera/compressedDepth"/>
-	<remap from="out" to="/bta_ros_1/tof_camera/decompressedDepth"/>
+	<remap from="in" to="/bta_tof_driver_1/tof_camera/compressedDepth"/>
+	<remap from="out" to="/bta_tof_driver_1/tof_camera/decompressedDepth"/>
   </node>
 </launch>
