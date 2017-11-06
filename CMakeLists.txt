@@ -60,7 +60,7 @@ generate_dynamic_reconfigure_options(
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES bta_tof_driver sensor2d
- CATKIN_DEPENDS dynamic_reconfigure roscpp sensor_msgs std_msgs pcl_ros pcl_conversions image_transport camera_info_manager nodelet
+  CATKIN_DEPENDS dynamic_reconfigure roscpp sensor_msgs std_msgs pcl_ros pcl_conversions image_transport camera_info_manager nodelet
   DEPENDS bta GStreamer GLIB GObject
 )
 

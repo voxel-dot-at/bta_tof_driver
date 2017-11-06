@@ -233,10 +233,10 @@ float BtaRos::getUnit2Meters(BTA_Unit unit) {
     //ROS_INFO_STREAM("BTA_Unit: " << unit);
     switch (unit) {
     case BTA_UnitCentimeter:
-	return 1/1000.;
+	return 1/100.;
 	break;
     case BTA_UnitMillimeter:
-	return 1/100.;
+	return 1/1000.;
 	break;
     default:
 	return 1.0;

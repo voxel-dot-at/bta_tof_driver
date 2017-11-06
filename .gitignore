@@ -1,3 +1,7 @@
+# API folders
+inc
+lib
+
 # Compiled Object files
 *.slo
 *.lo
@@ -26,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Intellij
+.idea
+cmake-build-debug

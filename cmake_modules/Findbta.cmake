@@ -12,7 +12,7 @@ FIND_PATH(bta_INCLUDE_DIR NAMES bta.h
 		/usr/local/include/libbta/
         /usr/include/libbta/
         ../include/
-        ../inc/
+        inc/
         #Bta/inc/
         #bta_sensor/Bta/inc
         ./
@@ -54,9 +54,10 @@ if( BTA_P100 )
     endif()
 endif()
 
-	
+
 find_library(bta_LIBRARY NAMES ${bta_name}
   PATHS
+    lib/Lin_x64/
         /usr/lib/
         /usr/local/lib/
 		../windows/lib/${ARCH_DIR}/
@@ -89,5 +90,3 @@ find_package_handle_standard_args(bta  DEFAULT_MSG
                                   bta_LIBRARIES bta_INCLUDE_DIRS)
 
 mark_as_advanced(bta_INCLUDE_DIRS bta_LIBRARIES)
-
-
