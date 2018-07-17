@@ -232,9 +232,9 @@ std::string BtaRos::getDataType(BTA_DataFormat dataFormat) {
 float BtaRos::getUnit2Meters(BTA_Unit unit) {
     //ROS_INFO_STREAM("BTA_Unit: " << unit);
     switch (unit) {
-    case BTA_UnitCentimeter:
+    /*case BTA_UnitCentimeter:
 	return 1/100.;
-	break;
+	break;*/
     case BTA_UnitMillimeter:
 	return 1/1000.;
 	break;
@@ -470,9 +470,9 @@ void BtaRos::parseConfig() {
 	}
 	config_.udpControlOutIpAddr = udpControlOutIpAddr_;
     }
-    if(nh_private_.getParam(nodeName_+"/udpControlOutPort",iusValue)) {
-	config_.udpControlOutPort = (uint16_t)iusValue;
-	ROS_DEBUG_STREAM("config_.udpControlOutPort: " << (int)config_.udpControlOutPort);
+    if(nh_private_.getParam(nodeName_+"/udpControlPort",iusValue)) {
+	config_.udpControlPort = (uint16_t)iusValue;
+	ROS_DEBUG_STREAM("config_.udpControlPort: " << (int)config_.udpControlPort);
     }
 
     if(nh_private_.getParam(nodeName_+"/udpControlInIpAddrLen",iusValue)) {
@@ -492,9 +492,9 @@ void BtaRos::parseConfig() {
 	}
 	config_.udpControlInIpAddr = udpControlInIpAddr_;
     }
-    if(nh_private_.getParam(nodeName_+"/udpControlInPort",iusValue)) {
-	config_.udpControlInPort = (uint16_t)iusValue;
-	ROS_DEBUG_STREAM("config_.udpControlInPort: " << (int)config_.udpControlInPort);
+    if(nh_private_.getParam(nodeName_+"/udpControlCallbackPort",iusValue)) {
+	config_.udpControlCallbackPort = (uint16_t)iusValue;
+	ROS_DEBUG_STREAM("config_.udpControlCallbackPort: " << (int)config_.udpControlCallbackPort);
     }
 
     if(nh_private_.getParam(nodeName_+"/tcpDeviceIpAddrLen",iusValue)) {

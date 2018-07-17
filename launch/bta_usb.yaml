@@ -2,10 +2,10 @@
 
 #udpControlOutIpAddr: 
 #udpControlOutIpAddrLen:
-#udpControlOutPort:
+#udpControlPort:
 #udpControlInIpAddr:
 #udpControlInIpAddrLen:
-#udpControlInPort: 
+#udpControlCallbackPort: 
 #tcpDataPort:
 #uartPortName:
 #uartBaudRate:
