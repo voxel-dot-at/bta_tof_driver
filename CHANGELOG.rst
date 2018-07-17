@@ -2,8 +2,8 @@
 Changelog for package bta_tof_driver
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.1.1 (2018-07-17)
+------------------
 * Updated fot BltTofApi v2.5.2 und checked for Lunar und Melodic
 * Merge pull request `#1 <https://github.com/voxel-dot-at/bta_tof_driver/issues/1>`_ from objective/master
   Fixed Unit Conversion Error
