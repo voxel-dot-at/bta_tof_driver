@@ -273,6 +273,9 @@ void BtaRos::publishData()
     status = BTAgetDistances(frame, &distances, &dataFormat, &unit, &xRes, &yRes);
     if (status == BTA_StatusOk) {
 	sensor_msgs::ImagePtr dis (new sensor_msgs::Image);
+	ci_tof->header.seq = frame->frameCounter;
+	ci_tof->header.stamp.sec = frame->timeStamp;
+	ci_tof->header.frame_id = "distances";
 	dis->header.seq = frame->frameCounter;
 	dis->header.stamp.sec = frame->timeStamp;
 	dis->height = yRes;
@@ -293,8 +296,11 @@ void BtaRos::publishData()
 			      &amDataFormat, &unit, &xRes, &yRes);
     if (status == BTA_StatusOk) {
 	sensor_msgs::ImagePtr amp (new sensor_msgs::Image);
+ci_tof->header.seq = frame->frameCounter;
+	ci_tof->header.stamp.sec = frame->timeStamp;
 	amp->header.seq = frame->frameCounter;
 	amp->header.stamp.sec = frame->timeStamp;
+	ci_tof->header.frame_id = "amplitudes";
 	amp->height = yRes;
 	amp->width = xRes;
 	amp->encoding = getDataType(amDataFormat);
