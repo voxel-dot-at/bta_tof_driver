@@ -9,10 +9,11 @@ message( BTA_P100:  ${BTA_P100} )
 
 FIND_PATH(bta_INCLUDE_DIR NAMES bta.h
  	PATHS
-		/usr/local/include/libbta/
-        /usr/include/libbta/
-        ../include/
-        inc/
+	include/
+	inc/
+
+	#/usr/local/include/libbta/
+        #/usr/include/libbta/
         #Bta/inc/
         #bta_sensor/Bta/inc
         ./
@@ -32,6 +33,7 @@ elseif (UNIX)
    endif()
    add_definitions(-DPLAT_LINUX)
 endif()
+
 
 message( ARCH_DIR:  ${ARCH_DIR} )
 
@@ -59,14 +61,14 @@ endif()
 
 find_library(bta_LIBRARY NAMES ${bta_name}
   PATHS
-    lib/Lin_x64/
-        /usr/lib/
-        /usr/local/lib/
-		../windows/lib/${ARCH_DIR}/
-		../Bta/${ARCH_DIR}/
-		Bta/lib/BtaEth/${ARCH_DIR}/
-		Bta/lib/Bta/${ARCH_DIR}/
-		Bta/lib/BtaP100/${ARCH_DIR}/
+	lib/
+        #/usr/lib/
+        #/usr/local/lib/
+	#	../windows/lib/${ARCH_DIR}/
+	#	../Bta/${ARCH_DIR}/
+	#	Bta/lib/BtaEth/${ARCH_DIR}/
+	#	Bta/lib/Bta/${ARCH_DIR}/
+	#	Bta/lib/BtaP100/${ARCH_DIR}/
 	NO_DEFAULT_PATH
 	DOC "Library binary"
 )
