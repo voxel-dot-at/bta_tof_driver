@@ -17,12 +17,28 @@
         args="load depth_image_proc/convert_metric record_player_manager --no-bond">
 
 	<remap from="image_raw" to="/bta_tof_driver_1/tof_camera/decompressedDepth"/>
-	<remap from="image" to="/bta_tof_driver_1/tof_camera/depth/image"/>
+	<remap from="image" to="/bta_tof_driver_1/tof_camera/depth"/>
   </node>
   
   <node pkg="image_transport" type="republish" name="image_convert" 
   	args="compressedDepth">
 	<remap from="in" to="/bta_tof_driver_1/tof_camera/compressedDepth"/>
 	<remap from="out" to="/bta_tof_driver_1/tof_camera/decompressedDepth"/>
+  </node>
+	
+  <node pkg="nodelet" type="nodelet" name="rectify" 
+        args="load image_proc/rectify record_player_manager --no-bond">
+
+	<remap from="camera_info" to="/bta_tof_driver_1/tof_camera/camera_info"/>
+	<remap from="image_mono" to="/bta_tof_driver_1/tof_camera/depth"/>
+	<remap from="image_rect" to="/bta_tof_driver_1/tof_camera/image_rect"/>
+  </node>
+
+  <node pkg="nodelet" type="nodelet" name="point_cloud_xyz" 
+        args="load depth_image_proc/point_cloud_xyz record_player_manager --no-bond">
+
+	<remap from="camera_info" to="/bta_tof_driver_1/tof_camera/camera_info"/>
+	<remap from="image_rect" to="/bta_tof_driver_1/tof_camera/image_rect"/>
+	<remap from="points" to="/bta_tof_driver_1/tof_camera/3d"/>
   </node>
 </launch>
