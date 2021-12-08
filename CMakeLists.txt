@@ -108,14 +108,14 @@ if (2DSENSOR)
 		${catkin_LIBRARIES} 
 	)
 
-#	add_library(Sensor2DNodelet
-#	src/sensor2D_nodelet.cpp
-#	)
-#	target_link_libraries(Sensor2DNodelet 
-#		sensor2d 
-#		${catkin_LIBRARIES} 
-#		${Boost_LIBRARIES} 
-#	)
+	add_library(Sensor2DNodelet
+	src/sensor2D_nodelet.cpp
+	)
+	target_link_libraries(Sensor2DNodelet 
+		sensor2d 
+		${catkin_LIBRARIES} 
+		${Boost_LIBRARIES} 
+	)
 
 	add_executable(sensor2d_node src/sensor2d_node.cpp)
 
@@ -144,7 +144,7 @@ endif ()
    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
  )
 if (2DSENSOR)
- install(TARGETS sensor2d sensor2d_node #Sensor2DNodelet 
+ install(TARGETS sensor2d Sensor2DNodelet sensor2d_node
    ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
    LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
    RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
