@@ -43,6 +43,7 @@
 #include <bta_tof_driver/sensor2D.hpp>
 #include <nodelet/nodelet.h>
 #include <boost/thread.hpp>
+#include <boost/scoped_ptr.hpp>
 
 namespace bta_tof_driver {
 

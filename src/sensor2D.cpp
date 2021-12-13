@@ -39,9 +39,9 @@
  * Github repository: https://github.com/voxel-dot-at/bta_ros
  *
  */
-#include <bta_ros/sensor2D.hpp>
+#include <bta_tof_driver/sensor2D.hpp>
 
-namespace bta_ros 
+namespace bta_tof_driver
 {
 	Sensor2D::Sensor2D(ros::NodeHandle nh_camera, 
 										ros::NodeHandle nh_private, 
@@ -223,13 +223,13 @@ namespace bta_ros
 		// Advertise all published topics
 			cim_rgb_.setCameraName(nodeName_);
 			if(cim_rgb_.validateURL(
-					/*camera_info_url_*/"package://bta_ros/calib.yml")) {
-				cim_rgb_.loadCameraInfo("package://bta_ros/calib.yml");
+					/*camera_info_url_*/"package://bta_tof_driver/calib.yml")) {
+				cim_rgb_.loadCameraInfo("package://bta_tof_driver/calib.yml");
 				ROS_INFO_STREAM("Loaded camera calibration from " << 
-					"package://bta_ros/calib.yml"	);
+					"package://bta_tof_driver/calib.yml"	);
 			} else {
 				ROS_WARN_STREAM("Camera info at: " <<
-					"package://bta_ros/calib.yml" <<
+					"package://bta_tof_driver/calib.yml" <<
 					" not found. Using an uncalibrated config.");
 			} 	
 	
