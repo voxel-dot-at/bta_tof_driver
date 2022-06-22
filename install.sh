@@ -1,21 +1,26 @@
 #!/bin/bash
 
+
+PV=3.3.4
+PN=BltTofApi_v${PV}_Win_x86_x64_Lin_x64
+
 # Install BltTofAPI
-echo "Install BltTofAPI Version v3.0.1"
+echo "Install BltTofAPI Version v${PV}"
+
 
 # Download API Package
-wget http://datasheets.bluetechnix.at/goto/BltTofApi/v3.0/binaries/BltTofApi_v3.0.1_Lin_noUsb_noJpg.zip
+wget http://datasheets.bluetechnix.at/goto/BltTofApi/v3.3/binaries/${PN}.zip
 
 # Unzip Archive
-unzip BltTofApi_v3.0.1_Lin_noUsb_noJpg.zip
+unzip ${PN}.zip
 
 # Move required folders into Repo
-mv BltTofApi_v3.0.1_Lin_noUsb_noJpg/inc/ .
+mv ${PN}/inc/ .
 mkdir lib
-tar -zxvf BltTofApi_v3.0.1_Lin_noUsb_noJpg/lib/Lin_x64/libbta.so.tar.gz -C ./lib/
+tar -zxvf ${PN}/lib/Lin_x64/libbta.so.tar.gz -C ./lib/
 
 # Clean Up
-rm -rf BltTofApi_v3.0.1_Lin_noUsb_noJpg BltTofApi_v3.0.1_Lin_noUsb_noJpg.zip
+rm -rf ${PN} ${PN}.zip
 
 # Done
 echo "Done"

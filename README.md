@@ -10,4 +10,4 @@ To read the docummentation of bta_ros, please visit the wiki page on ROS: http:/
 
 ## Setup ##
 
-Run `install.sh` to download BtaTofAPI from [Bluetechnix_ToF_API_v2](https://support.bluetechnix.at/wiki/Bluetechnix_ToF_API_v2)
+Run `install.sh` to download Blt ToF API from [Blt_ToF_API](https://support.bluetechnix.at/wiki/Blt_ToF_API)
