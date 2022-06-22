@@ -212,8 +212,12 @@ size_t BtaRos::getDataSize(BTA_DataFormat dataFormat) {
     case BTA_DataFormatFloat32:
 	return sizeof(float);
 	break;
+    default:
+      std::cerr << "BtaRos::getDataSize(): Unknown data size!" << std::endl;
+      return 0;
     }
 }
+static std::string unknownDataType="UNKNOWN_DATA_TYPE";
 
 std::string BtaRos::getDataType(BTA_DataFormat dataFormat) {
     switch (dataFormat) {
@@ -226,6 +230,9 @@ std::string BtaRos::getDataType(BTA_DataFormat dataFormat) {
     case BTA_DataFormatFloat32:
 	return sensor_msgs::image_encodings::TYPE_32FC1;
 	break;
+    default:
+      std::cerr << "BtaRos::getDataType(): Unknown data type!" << std::endl;
+      return unknownDataType;
     }
 }
 
@@ -645,7 +652,7 @@ int BtaRos::initialize()
     while (!config_init_)
     {
 	ROS_DEBUG("Waiting for dynamic reconfigure configuration.");
-	boost::this_thread::sleep(boost::posix_time::seconds(0.1));
+	boost::this_thread::sleep(boost::posix_time::milliseconds(100));
     }
     ROS_DEBUG("Dynamic reconfigure configuration received.");
 
