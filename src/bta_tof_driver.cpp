@@ -24,22 +24,6 @@
  *
  ******************************************************************************/
 
-/** @mainpage Bta ROS driver
- *
- * @section intro_sec Introduction
- *
- * This software defines a interface for working with all ToF cameras from
- * Bluetechnix GmbH supported by their API.
- *
- * @section install_sec Installation
- *
- * We encorage you to follow the instruction we prepared in:
- *
- * ROS wiki: http://wiki.ros.org/bta_tof_driver
- * Github repository: https://github.com/voxel-dot-at/bta_tof_driver
- *
- */
-
 #include <bta_tof_driver/bta_tof_driver.hpp>
 
 namespace bta_tof_driver 
@@ -262,7 +246,12 @@ void BtaRos::publishData()
     BTA_Status status;
 
     BTA_Frame *frame;
+    BTA_FrameMode frameMode;
     status = BTAgetFrame(handle_, &frame, 3000);
+    if (status != BTA_StatusOk) {
+	return;
+    }
+    status = BTAgetFrameMode(handle_, &frameMode);
     if (status != BTA_StatusOk) {
 	return;
     }
@@ -423,6 +412,16 @@ void BtaRos::publishData()
 	pub_xyz_.publish(_xyz);
     }
 
+    void *colorBuffer;
+    BTA_DataFormat dataFormat;
+    BTA_Unit unit;
+    uint16_t xRes;
+    uint16_t yRes;
+    status =  BTAgetColors(frame, &colorBuffer, &dataFormat, &unit, &xRes, &yRes);
+    if (status == BTA_StatusOk) {
+    }
+
+    
     BTAfreeFrame(&frame);
 }
 

@@ -24,21 +24,6 @@
  *
  ******************************************************************************/
 
-/** @mainpage Bta ROS driver
- *
- * @section intro_sec Introduction
- *
- * This software defines a interface for working with all ToF cameras from 
- * Bluetechnix GmbH supported by their API.
- *
- * @section install_sec Installation
- *
- * We encorage you to follow the instruction we prepared in:
- *
- * ROS wiki: http://wiki.ros.org/bta_tof_driver
- * Github repository: https://github.com/voxel-dot-at/bta_tof_driver
- *
- */
 #ifndef __SENSOR2D_HPP__
 #define __SENSOR2D_HPP__
 
