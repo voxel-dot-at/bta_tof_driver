@@ -173,8 +173,8 @@ private:
      * @brief Callback for rqt_reconfigure. It is called any time we change a
      * parameter in the visual interface
      *
-     * @param [in] bta_tof_driver::bta_tof_driverConfig
-     * @param [in] uint32_t
+     * @param [in] config a reference to a bta tof driver configuration struct
+     * @param [in] level
      *
      */
     void callback(bta_tof_driver::bta_tof_driverConfig &config, uint32_t level);

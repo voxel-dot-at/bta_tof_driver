@@ -30,8 +30,8 @@
  *
  * @brief Main function
  *
- * @param [in] int
- * @param [in] char *
+ * @param [in] argc argument count
+ * @param [in] argv argument string list
  *
  */
 int main(int argc, char *argv[]) {
