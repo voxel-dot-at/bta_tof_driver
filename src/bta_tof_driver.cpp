@@ -303,7 +303,7 @@ void BtaRos::publishData()
 			      &amDataFormat, &unit, &xRes, &yRes);
     if (status == BTA_StatusOk) {
 	sensor_msgs::ImagePtr amp (new sensor_msgs::Image);
-ci_tof->header.seq = frame->frameCounter;
+	ci_tof->header.seq = frame->frameCounter;
 	ci_tof->header.stamp.sec = frame->timeStamp;
 	amp->header.seq = frame->frameCounter;
 	amp->header.stamp.sec = frame->timeStamp;
@@ -569,11 +569,9 @@ void BtaRos::parseConfig() {
     if (nh_private_.getParam(nodeName_+"/frameQueueMode",frameQueueMode))
 	config_.frameQueueMode = (BTA_QueueMode)frameQueueMode;
 
-#if !defined(BTA_ETH) || !defined(BTA_P100)
     int32_t deviceType;
     if(nh_private_.getParam(nodeName_+"/deviceType",deviceType))
 	config_.deviceType = (BTA_DeviceType)deviceType;
-#endif
 
     //config_.frameArrived = &frameArrived;
     config_.infoEvent = &infoEventCb;
@@ -630,16 +628,16 @@ int BtaRos::initialize()
 {
 
     /*
-			 * Camera config
-			 */
+     * Camera config
+     */
 
     BTAinitConfig(&config_);
 
     parseConfig();
 
     /*
-			 * Camera Initialization
-			 */
+     * Camera Initialization
+     */
     ROS_DEBUG_STREAM("Config Readed sucessfully");
 
     BTA_Status status;
@@ -657,8 +655,8 @@ int BtaRos::initialize()
     ROS_DEBUG("Dynamic reconfigure configuration received.");
 
     /*
-			 * ROS Node Initialization
-			 */
+     * ROS Node Initialization
+     */
     {
 	// Advertise all published topics
 	cim_tof_.setCameraName(nodeName_);
